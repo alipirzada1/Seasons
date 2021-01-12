@@ -52,9 +52,9 @@ class App extends React.Component {
           <div className="ui positive message">
             <i className="close icon"></i>
             <div className="header">Your Coordinates:</div>
-            <p>
-              Lat: {this.state.lat} Long:{this.state.long}{" "}
-            </p>
+            <div>
+              <SeasonDisplay lat={this.state.lat} />
+            </div>
           </div>
         </div>
       );
