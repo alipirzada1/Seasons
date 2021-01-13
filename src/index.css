@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+.wide1 {
+  margin: auto;
+  padding: 100px;
+  /* height: 1000px;
+  min-width: 100px;
+  min-height: 100px;
+  display: inline-block; */
+}
+
+.borderred1 {
+  border: 10px solid rgb(147, 149, 255);
+  border-radius: 20px;
+}

@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
+import "semantic-ui-css/semantic.min.css";
+import "./index.css";
+import Spinner from "./Spinner";
 
 // Class Based Component
 class App extends React.Component {
@@ -34,43 +37,38 @@ class App extends React.Component {
     console.log("My component was just updated!!!- it rerendered!");
   }
 
-  // React says we have to define render method!!!
-  render() {
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return (
-        <div className="ui container">
+        <div className="ui container wide1">
           <div className="ui red message">
-            <i className="close icon"></i>
-            <div className="header">Unable to located</div>
+            <div className="header">Unable to locate</div>
             <p> {this.state.errorMessage}</p>
           </div>
         </div>
       );
     } else if (!this.state.errorMessage && this.state.lat) {
       return (
-        <div className="ui container">
-          <div className="ui positive message">
-            <i className="close icon"></i>
-            <div className="header">Your Coordinates:</div>
-            <div>
-              <SeasonDisplay lat={this.state.lat} />
-            </div>
-          </div>
+        // <div className="">
+        // <div className="ui container wide1">
+        // <div className="ui positive message">
+        // {/* <i className="close icon"></i> */}
+        // {/* <div className="header">Your Coordinates:</div> */}
+        <div>
+          <SeasonDisplay lat={this.state.lat} />
         </div>
+        // </div>
+        // </div>
+        // </div>
       );
     } else {
-      return (
-        <div className="ui container">
-          <div class="ui icon message">
-            <i class="notched circle loading icon"></i>
-            <div class="content">
-              <div class="header">Just one second</div>
-              <p>Hang Tight ! Loading your location! </p>
-            </div>
-          </div>
-        </div>
-      );
+      return <Spinner message="Please accept location request" />;
     }
+  }
+
+  // React says we have to define render method!!!
+  render() {
+    return <div className="borderred1">{this.renderContent()}</div>;
   }
 }
 
