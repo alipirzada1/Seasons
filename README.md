@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-# Remember to run the following command on your terminal for installing semantic-ui css ## npm install semantic-ui-css 
+# Remember to run the following command on your terminal for installing semantic-ui css-: npm install semantic-ui-css 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
